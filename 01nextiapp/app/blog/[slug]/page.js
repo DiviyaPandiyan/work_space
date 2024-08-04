@@ -1,7 +1,7 @@
-export default function Page(){
+export default function Page({params}){
 
     return(
-        <div>test</div>
+        <div>my post :{params.slug}</div>
     )
 
 } 
