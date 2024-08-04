@@ -7,3 +7,6 @@ export async function GET() {
      title:'samsung'
 }])
 }
+export async function POST() {
+     return Response.json({message:'send post'})
+}
