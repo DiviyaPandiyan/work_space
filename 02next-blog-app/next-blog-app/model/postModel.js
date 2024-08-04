@@ -3,8 +3,11 @@ const postSchema = new Schema({
   title: String,
   description: String,
   image: String,
-});
+},{ toJSON: { virtuals: true} });
 
-const postModel = models.Posts || model('Post',postSchema);
+postSchema.virtual('short_description').get(function() {
+    return this.description.substr(0,50)+'...'
+});
+const postModel = models.Post || model('Post',postSchema);
 
 export default postModel;
